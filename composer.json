@@ -2,6 +2,7 @@
     "name": "amsolucionesweb/cuentadigital",
     "description": "Permite la integración de aplicaciones PHP con la plataforma de pago  Cuenta Digital.",
     "type": "library",
+    "license": "MIT",
     "keywords": ["cuenta digital","cuentadigital", "pago facil", "rapi pago"],
     "authors": [
         {
