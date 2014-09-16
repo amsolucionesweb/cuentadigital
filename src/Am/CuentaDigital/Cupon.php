@@ -111,14 +111,6 @@ class Cupon
     private $m2 = 0;
 
     /**
-     * La generación de sus cupones recibirá la respuesta en XML en lugar de
-     * mostrar el cupón original.
-     *
-     * @var integer
-     */
-    private $xml;
-
-    /**
      * Get id
      *
      * @return integer
@@ -426,30 +418,6 @@ class Cupon
     public function setM2($m2)
     {
         $this->m2 = $m2;
-
-        return $this;
-    }
-
-    /**
-     * Get xml
-     *
-     * @return integer
-     */
-    public function getXml()
-    {
-        return $this->xml;
-    }
-
-    /**
-     * Set xml
-     *
-     * @param integer $xml
-     *
-     * @return \AM\CuentaDigital\Cupon
-     */
-    public function setXml($xml)
-    {
-        $this->xml = $xml;
 
         return $this;
     }

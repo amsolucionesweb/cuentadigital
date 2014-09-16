@@ -3,6 +3,7 @@
 namespace Am\CuentaDigital;
 
 use Am\CuentaDigital\Cupon;
+use Am\CuentaDigital\CuponResponse;
 
 /**
  * Se encarga de interactuar con el webservice de Cuenta Digital
@@ -146,11 +147,19 @@ class Cliente
             $parametros .= '&m2=' . $cupon->getM2();
         }
 
-        if ($cupon->getXml()) {
-            $parametros .= '&xml=' . $cupon->getXml();
+
+        $parametros .= '&xml=1';
+
+        $respuesta = $this->_call(self::URL_GENERACION_CUPON . $parametros);
+
+        $xml = simplexml_load_string($respuesta);
+
+        // hubo un error en el parseo por un error al generar el cupón
+        if (!$xml) {
+            throw new \Exception(strip_tags($respuesta));
         }
 
-        return $this->_call(self::URL_GENERACION_CUPON . $parametros);
+        return new CuponResponse($xml);
     }
 
     /**
