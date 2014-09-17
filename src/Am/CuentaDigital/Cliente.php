@@ -50,6 +50,14 @@ class Cliente
     private $modoDesarrollo;
 
     /**
+     * Tiempo en milisegundos a esperar que responda el api. Defecto 0 espera
+     * indefinidamente
+     *
+     * @var integer
+     */
+    private $curlTimeout;
+
+    /**
      * Crea una instancia del cliente
      *
      * @param integer $idCuentaDigital
@@ -61,6 +69,21 @@ class Cliente
         $this->idCuentaDigital = $idCuentaDigital;
         $this->hashControl = $hashControl;
         $this->modoDesarrollo = $modoDesarrollo;
+        $this->curlTimeout = 0;
+    }
+
+    /**
+     * Set curlTimeout
+     *
+     * @param integer $curlTimeout
+     *
+     * @return \Am\CuentaDigital\Cliente
+     */
+    public function setCurlTimeout($curlTimeout)
+    {
+        $this->curlTimeout = $curlTimeout;
+
+        return $this;
     }
 
     /**
@@ -81,6 +104,8 @@ class Cliente
      * Crea los parámetros de URL y hace la llamada al webservice.
      *
      * @param \AM\CuentaDigital\Cupon $cupon
+     *
+     * @return CuponResponse
      *
      * @throws \Exception
      */
@@ -168,6 +193,8 @@ class Cliente
      * @param string $url
      *
      * @return string
+     *
+     * @throws \Exception
      */
     private function _call($url)
     {
@@ -177,7 +204,15 @@ class Cliente
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
+        if ($this->curlTimeout) {
+            curl_setopt($ch, CURLOPT_TIMEOUT_MS, $this->curlTimeout);
+        }
+
         $output = curl_exec($ch);
+
+        if ($output === false) {
+            throw new \Exception(curl_error($ch));
+        }
 
         curl_close($ch);
 
