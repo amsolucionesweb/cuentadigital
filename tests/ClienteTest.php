@@ -10,7 +10,7 @@ use Am\CuentaDigital\Cliente;
 class ClienteTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @covers Cliente::getNuevoCupon
+     * @cover Cliente::getNuevoCupon
      */
     public function testGetNuevoCupon()
     {
@@ -23,7 +23,7 @@ class ClienteTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Cliente::generarCupon
+     * @cover Cliente::generarCupon
      */
     public function testGenerarCuponCorrecto()
     {
@@ -100,7 +100,7 @@ class ClienteTest extends PHPUnit_Framework_TestCase
 
     /**
      * @expectedException \Exception
-     * @covers Cliente::generarCupon
+     * @cover Cliente::generarCupon
      */
     public function testGenerarCuponError()
     {
@@ -126,7 +126,7 @@ class ClienteTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Cliente::getReportePagos
+     * @cover Cliente::getReportePagos
      */
     public function testGetReportePagosCorrecto()
     {
@@ -151,7 +151,7 @@ class ClienteTest extends PHPUnit_Framework_TestCase
 
     /**
      * @expectedException \Exception
-     * @covers Cliente::getReportePagos
+     * @cover Cliente::getReportePagos
      */
     public function testGetReportePagosErrorChecksum()
     {
@@ -173,7 +173,7 @@ class ClienteTest extends PHPUnit_Framework_TestCase
 
     /**
      * @expectedException \Exception
-     * @covers Cliente::getReportePagos
+     * @cover Cliente::getReportePagos
      */
     public function testGetReportePagosError()
     {
