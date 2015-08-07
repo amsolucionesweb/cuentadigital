@@ -4,18 +4,13 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'stdout');
 
-require '../src/Am/CuentaDigital/Cupon.php';
-require '../src/Am/CuentaDigital/CuponResponse.php';
-require '../src/Am/CuentaDigital/Cliente.php';
+require '../src/autoload.php';
 
-//use Am\CuentaDigital\Cupon;
-//use Am\CuentaDigital\Cliente;
+use Am\CuentaDigital\Cliente;
 
-$idCuentaDigital = 74869;
-$hashControl = 'un hash';
-$modoDesarrollo = false;
+$idCuentaDigital = 99999;
 
-$cliente = new Am\CuentaDigital\Cliente($idCuentaDigital, $hashControl, $modoDesarrollo);
+$cliente = new Cliente($idCuentaDigital);
 //$cliente->setCurlTimeout(1000);
 
 $cupon = $cliente->getNuevoCupon();
@@ -30,6 +25,7 @@ try {
 
     print_r($respuesta);
 } catch (\Exception $e) {
-    echo 'Error: ' . $e->getMessage();
+    echo 'Error: '.$e->getMessage();
 }
-?>
+
+

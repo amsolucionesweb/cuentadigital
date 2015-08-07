@@ -179,33 +179,36 @@ class CuponResponse
      */
     function __construct($xml)
     {
-        $this->merchantId = (string) $xml->INVOICE->MERCHANTID;
-        $this->ipAddress = (string) $xml->INVOICE->IPADDRESS;
-        $this->paymentcode1 = (string) $xml->INVOICE->PAYMENTCODE1;
-        $this->paymentcode2 = (string) $xml->INVOICE->PAYMENTCODE2;
-        $this->paymentcode3 = (string) $xml->INVOICE->PAYMENTCODE3;
-        $this->paymentcode4 = (string) $xml->INVOICE->PAYMENTCODE4;
-        $this->paymentcode5 = (string) $xml->INVOICE->PAYMENTCODE5;
-        $this->paymentcode6 = (string) $xml->INVOICE->PAYMENTCODE6;
-        $this->paymentcode7 = (string) $xml->INVOICE->PAYMENTCODE7;
-        $this->paymentcode8 = (string) $xml->INVOICE->PAYMENTCODE8;
-        $this->paymentcode9 = (string) $xml->INVOICE->PAYMENTCODE9;
-        $this->paymentcode10 = (string) $xml->INVOICE->PAYMENTCODE10;
-        $this->barcodeImage = (string) $xml->INVOICE->BARCODEIMAGE;
-        $this->barcodeBase64 = (string) $xml->INVOICE->BARCODEBASE64;
-        $this->invoiceUrl = (string) $xml->INVOICE->INVOICEURL;
-        $this->site = (string) $xml->INVOICE->SITE;
-        $this->merchantReference = (string) $xml->INVOICE->MERCHANTREFERENCE;
-        $this->concept = (string) $xml->INVOICE->CONCEPT;
-        $this->curr = (string) $xml->INVOICE->CURR;
-        $this->amount = (string) $xml->INVOICE->AMOUNT;
-        $this->secondAmount = (string) $xml->INVOICE->SECONDAMOUNT;
-        $this->date = \DateTime::createFromFormat('d/m/Y H:i:s', (string) $xml->INVOICE->DATE . ' 00:00:00');
-        $this->dueDate = \DateTime::createFromFormat('d/m/Y H:i:s', (string) $xml->INVOICE->DUEDATE . ' 00:00:00');
-        $this->secondDueDate = \DateTime::createFromFormat('d/m/Y H:i:s', (string) $xml->INVOICE->SECONDDUEDATE . ' 00:00:00');
-        $this->emailTo = (string) $xml->INVOICE->EMAILTO;
-        $this->country = (string) $xml->INVOICE->COUNTRY;
-        $this->lang = (string) $xml->INVOICE->LANG;
+        $this->merchantId = (string)$xml->INVOICE->MERCHANTID;
+        $this->ipAddress = (string)$xml->INVOICE->IPADDRESS;
+        $this->paymentcode1 = (string)$xml->INVOICE->PAYMENTCODE1;
+        $this->paymentcode2 = (string)$xml->INVOICE->PAYMENTCODE2;
+        $this->paymentcode3 = (string)$xml->INVOICE->PAYMENTCODE3;
+        $this->paymentcode4 = (string)$xml->INVOICE->PAYMENTCODE4;
+        $this->paymentcode5 = (string)$xml->INVOICE->PAYMENTCODE5;
+        $this->paymentcode6 = (string)$xml->INVOICE->PAYMENTCODE6;
+        $this->paymentcode7 = (string)$xml->INVOICE->PAYMENTCODE7;
+        $this->paymentcode8 = (string)$xml->INVOICE->PAYMENTCODE8;
+        $this->paymentcode9 = (string)$xml->INVOICE->PAYMENTCODE9;
+        $this->paymentcode10 = (string)$xml->INVOICE->PAYMENTCODE10;
+        $this->barcodeImage = (string)$xml->INVOICE->BARCODEIMAGE;
+        $this->barcodeBase64 = (string)$xml->INVOICE->BARCODEBASE64;
+        $this->invoiceUrl = (string)$xml->INVOICE->INVOICEURL;
+        $this->site = (string)$xml->INVOICE->SITE;
+        $this->merchantReference = (string)$xml->INVOICE->MERCHANTREFERENCE;
+        $this->concept = (string)$xml->INVOICE->CONCEPT;
+        $this->curr = (string)$xml->INVOICE->CURR;
+        $this->amount = (string)$xml->INVOICE->AMOUNT;
+        $this->secondAmount = (string)$xml->INVOICE->SECONDAMOUNT;
+        $this->date = \DateTime::createFromFormat('d/m/Y H:i:s', (string)$xml->INVOICE->DATE.' 00:00:00');
+        $this->dueDate = \DateTime::createFromFormat('d/m/Y H:i:s', (string)$xml->INVOICE->DUEDATE.' 00:00:00');
+        $this->secondDueDate = \DateTime::createFromFormat(
+            'd/m/Y H:i:s',
+            (string)$xml->INVOICE->SECONDDUEDATE.' 00:00:00'
+        );
+        $this->emailTo = (string)$xml->INVOICE->EMAILTO;
+        $this->country = (string)$xml->INVOICE->COUNTRY;
+        $this->lang = (string)$xml->INVOICE->LANG;
     }
 
     /**
