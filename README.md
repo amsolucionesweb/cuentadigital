@@ -1,6 +1,6 @@
 # Librería PHP para Cuenta Digital
 
-Esta librería permite integrar tu aplicación PHP con la plataforma de pago Cuenta Digital, pudiendo generar cupones de pago y exportar los pagos realizados.
+Esta librería permite integrar tu aplicación PHP con la plataforma de pago Cuenta Digital, pudiendo generar cupones de pago y exportar reportes de pagos realizados.
 
 ## Instalación
 Para instalar vía composer agregar la siguiente línea a composer.json
