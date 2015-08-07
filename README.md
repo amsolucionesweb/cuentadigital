@@ -1,5 +1,7 @@
 # Librería PHP para Cuenta Digital
 
+[![Build Status](https://travis-ci.org/amsolucionesweb/cuentadigital.svg?branch=master)](https://travis-ci.org/amsolucionesweb/cuentadigital)
+
 Esta librería permite integrar tu aplicación PHP con la plataforma de pago Cuenta Digital, pudiendo generar cupones de pago y exportar reportes de pagos realizados.
 
 ## Instalación

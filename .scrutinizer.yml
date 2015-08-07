@@ -1,0 +1,19 @@
+checks:
+  php:
+    code_rating: true
+    duplication: true
+
+filter:
+  paths:
+    - src/*
+  excluded_paths:
+    - ejemplos/*
+
+build:
+  tests:
+    override:
+      -
+        command: phpunit --coverage-clover=coverage --bootstrap src/autoload.php tests
+        coverage:
+          file: coverage
+          format: php-clover
