@@ -142,11 +142,17 @@ class ClienteTest extends PHPUnit_Framework_TestCase
                 1|100.000|93.660|6.340|20150807|55e321960d6f729b12f3914dca346dbb'
             );
 
+        // fecha solo
         $reporte = $cliente->getReportePagos('20150806');
 
         $this->assertEquals('100.000', $reporte->getMontoBruto());
         $this->assertEquals(1, count($reporte->getItems()));
 
+        //fecha y hora
+        $reporte = $cliente->getReportePagos('20150806', '00', '00', '14', '00');
+
+        $this->assertEquals('100.000', $reporte->getMontoBruto());
+        $this->assertEquals(1, count($reporte->getItems()));
     }
 
     /**

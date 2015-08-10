@@ -214,7 +214,7 @@ class Cliente
         $parametros = '?control='.$this->hashControl;
         $parametros .= '&fecha='.$fecha;
 
-        if ($hora1 && $min1 && $hora2 && $min2) {
+        if ($hora1 !== null && $min1 !== null && $hora2 !== null && $min2 !== null) {
             $parametros .= '&hour1='.$hora1.'&min1='.$min1.'&hour2='.$hora2.'&min2='.$min2;
         }
 
@@ -239,8 +239,7 @@ class Cliente
         $reporte->setMontoNeto($resumen[2]);
         $reporte->setComision($resumen[3]);
         $reporte->setFechaCobro(
-            \DateTime::createFromFormat('Ymd', $resumen[4]),
-            new \DateTimeZone('America/Argentina/Buenos_Aires')
+            \DateTime::createFromFormat('Ymd', $resumen[4], new \DateTimeZone('America/Argentina/Buenos_Aires'))
         );
         $reporte->setChecksum($resumen[5]);
 

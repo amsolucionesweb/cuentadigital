@@ -177,9 +177,9 @@ class CuponResponse
      *
      * @param \SimpleXMLElement $xml
      */
-    function __construct($xml)
+    public function __construct($xml)
     {
-        $this->merchantId = (string)$xml->INVOICE->MERCHANTID;
+        $this->merchantId = (int)$xml->INVOICE->MERCHANTID;
         $this->ipAddress = (string)$xml->INVOICE->IPADDRESS;
         $this->paymentcode1 = (string)$xml->INVOICE->PAYMENTCODE1;
         $this->paymentcode2 = (string)$xml->INVOICE->PAYMENTCODE2;
@@ -198,8 +198,8 @@ class CuponResponse
         $this->merchantReference = (string)$xml->INVOICE->MERCHANTREFERENCE;
         $this->concept = (string)$xml->INVOICE->CONCEPT;
         $this->curr = (string)$xml->INVOICE->CURR;
-        $this->amount = (string)$xml->INVOICE->AMOUNT;
-        $this->secondAmount = (string)$xml->INVOICE->SECONDAMOUNT;
+        $this->amount = (double)$xml->INVOICE->AMOUNT;
+        $this->secondAmount = (double)$xml->INVOICE->SECONDAMOUNT;
         $this->date = \DateTime::createFromFormat('d/m/Y H:i:s', (string)$xml->INVOICE->DATE.' 00:00:00');
         $this->dueDate = \DateTime::createFromFormat('d/m/Y H:i:s', (string)$xml->INVOICE->DUEDATE.' 00:00:00');
         $this->secondDueDate = \DateTime::createFromFormat(
