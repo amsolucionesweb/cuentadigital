@@ -45,6 +45,14 @@ class Reporte
     private $items;
 
     /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->items = array();
+    }
+
+    /**
      * @return int
      */
     public function getCantidadCobros()
