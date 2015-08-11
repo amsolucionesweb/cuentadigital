@@ -199,7 +199,7 @@ class Cliente
     /**
      * Retorna un reporte de pagos
      *
-     * @param $fecha de la operación en formato YYYYMMDD
+     * @param string $fecha de la operación en formato YYYYMMDD
      * @param string $hora1 de inicio en formato 01
      * @param string $min1 de inicio en formato 01
      * @param string $hora2 de fin en formato 01
