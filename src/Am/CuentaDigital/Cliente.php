@@ -34,28 +34,28 @@ class Cliente
      *
      * @var integer
      */
-    private $idCuentaDigital;
+    protected $idCuentaDigital;
 
     /**
      * Hasg de control necesario para realizar la exportación.
      *
      * @var string
      */
-    private $hashControl;
+    protected $hashControl;
 
     /**
      * Clave para validar que el reporte es valido.
      *
      * @var string
      */
-    private $claveSeguridad;
+    protected $claveSeguridad;
 
     /**
      * Indica si se va a trabajar con la url de desarrollo o la de producción.
      *
      * @var boolean
      */
-    private $modoDesarrollo;
+    protected $modoDesarrollo;
 
     /**
      * Tiempo en milisegundos a esperar que responda el api. Defecto 0 espera
@@ -63,7 +63,7 @@ class Cliente
      *
      * @var integer
      */
-    private $curlTimeout;
+    protected $curlTimeout;
 
     /**
      * Crea una instancia del cliente
