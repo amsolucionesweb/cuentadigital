@@ -266,7 +266,8 @@ class Cliente
             $item->setReferencia($data[6]);
             $item->setReferencia($data[6]);
             $item->setMedioPago($data[7]);
-            $item->setCobroNumero($data[8]);
+            $item->setCodigoOperacion($data[8]);
+            $item->setCobroNumero($data[9]);
 
             $reporte->addItem($item);
         }

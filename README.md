@@ -39,7 +39,7 @@ Ir a "Herramientas de Venta" -> "Reporte de pagos" y establecer la configuració
 - Referencia: activo	
 - Operaciones: Recibidas	
 - Medio de pago usado: activo	
-- Código interno único de operación: no activo	
+- Código interno único de operación: activo	
 - Linea final en archivo indicando cantidad de cobros recibidos, monto total, fecha y checksum: activo
 - Clave de seguridad: colocar una clave cualquiera	
 - Separador de variables: |

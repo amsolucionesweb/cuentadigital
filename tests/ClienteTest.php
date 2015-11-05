@@ -138,7 +138,7 @@ class ClienteTest extends PHPUnit_Framework_TestCase
         $cliente->expects($this->any())
             ->method('_call')
             ->willReturn(
-                '20150807|123633|100.000|93.660|6.340|01902770536778|00000000|PagoFacil|1
+                '20150807|123633|100.000|93.660|6.340|01902770536778|00000000|PagoFacil|ffbc5a9bac0550fc6d6bb2563ffee74e-4f0ba2df72976c45cfecd90b14e3864d|1
                 1|100.000|93.660|6.340|20150807|55e321960d6f729b12f3914dca346dbb'
             );
 
@@ -169,7 +169,7 @@ class ClienteTest extends PHPUnit_Framework_TestCase
         $cliente->expects($this->any())
             ->method('_call')
             ->willReturn(
-                '20150807|123633|100.000|93.660|6.340|01902770536778|00000000|PagoFacil|1
+                '20150807|123633|100.000|93.660|6.340|01902770536778|00000000|PagoFacil|ffbc5a9bac0550fc6d6bb2563ffee74e-4f0ba2df72976c45cfecd90b14e3864d|1
                 1|100.000|93.660|6.340|20150807|bcc3780eff266ad4d723038843a9a2fb'
             );
 

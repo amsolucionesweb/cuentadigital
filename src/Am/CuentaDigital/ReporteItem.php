@@ -45,6 +45,11 @@ class ReporteItem
     private $medioPago;
 
     /**
+     * @var string
+     */
+    private $codigoOperacion;
+
+    /**
      * @var int
      */
     private $cobroNumero;
@@ -159,6 +164,22 @@ class ReporteItem
     public function setMedioPago($medioPago)
     {
         $this->medioPago = $medioPago;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCodigoOperacion()
+    {
+        return $this->codigoOperacion;
+    }
+
+    /**
+     * @param string $codigoOperacion
+     */
+    public function setCodigoOperacion($codigoOperacion)
+    {
+        $this->codigoOperacion = $codigoOperacion;
     }
 
     /**
